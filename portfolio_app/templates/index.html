@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MRUNAL's Portfolio</title>
+    {% load static %}
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #f1f1f1;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            border-bottom: 1px solid #333;
+        }
+        .intro {
+            max-width: 60%;
+        }
+        .intro h1 {
+            font-size: 48px;
+            color: #ffd700;
+        }
+        .intro p {
+            font-size: 20px;
+        }
+        .actions button {
+            background-color: #ffd700;
+            color: #000;
+            border: none;
+            padding: 12px 24px;
+            margin: 10px 10px 0 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .actions button:hover {
+            background-color: #ffcc00;
+        }
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #ffd700;
+        }
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        section {
+            padding: 40px;
+            border-bottom: 1px solid #333;
+        }
+        h2 {
+            color: #ffcc00;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #1a1a1a;
+            color: #f1f1f1;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        form button {
+            background-color: #ffcc00;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="intro">
+            <h1>MRUNAL</h1>
+            <p>Hi! I'm a Data Science enthusiast and Python Developer. I build smart solutions!</p>
+            <div class="actions">
+                <button onclick="window.location.href='/download_resume/'">Know Me Professionally</button>
+                <button onclick="window.open('https://instagram.com/your_insta_id')">Know Me Personally</button>
+            </div>
+        </div>
+        <div class="profile-pic">
+            <img src="{% static 'try again.png' %}" alt="Mrunal's Photo">
+        </div>
+    </header>
+
+    <section>
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Conversational Image Chatbot</strong>: Built using image captioning + NLP with Transformers.</li>
+            <li><strong>Face Attendance System</strong>: Used OpenCV and face recognition to log attendance.</li>
+            <li><strong>Drowsiness Detection</strong>: Eye aspect ratio-based drowsy driver alert system.</li>
+            <li><strong>AI Personalized Learning</strong>: Real-time adaptive learning using TensorFlow and PySpark.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Contact Me</h2>
+        <form action="/submit_contact/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Phone Number" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+</body>
+</html>

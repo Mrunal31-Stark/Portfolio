@@ -1,4 +1,4 @@
-# 🧠 Mrunal's Portfolio | Django + MongoDB
+# 🧠  Portfolio | Django + MongoDB
 
 A fully functional personal portfolio built using **Django** for backend and **MongoDB** for storing contact form submissions. Features a sleek dark theme, resume download, social media integration, and project showcase.
 
@@ -6,8 +6,6 @@ A fully functional personal portfolio built using **Django** for backend and **M
 
 ## 🚀 Features
 
-- 🔥 Dark-themed modern UI
-- 👤 Circular profile image on the right
 - 📜 Resume download on button click
 - 📸 Instagram link via "Know Me Personally" button
 - 💼 Project showcase (Conversational Bot, Face Attendance, etc.)

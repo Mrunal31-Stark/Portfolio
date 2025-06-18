@@ -88,7 +88,7 @@
             <p>Hi! I'm a Data Science enthusiast and Python Developer. I build smart solutions!</p>
             <div class="actions">
                 <button onclick="window.location.href='/download_resume/'">Know Me Professionally</button>
-                <button onclick="window.open('https://instagram.com/your_insta_id')">Know Me Personally</button>
+                <button onclick="window.open('https://instagram.com/mrunal_346')">Know Me Personally</button>
             </div>
         </div>
         <div class="profile-pic">
@@ -97,26 +97,56 @@
     </header>
 
     <section>
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Conversational Image Chatbot</strong>: Built using image captioning + NLP with Transformers.</li>
-            <li><strong>Face Attendance System</strong>: Used OpenCV and face recognition to log attendance.</li>
-            <li><strong>Drowsiness Detection</strong>: Eye aspect ratio-based drowsy driver alert system.</li>
-            <li><strong>AI Personalized Learning</strong>: Real-time adaptive learning using TensorFlow and PySpark.</li>
-        </ul>
-    </section>
+    <h2>Projects</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div style="background-color: #1a1a1a; border-radius: 12px; overflow: hidden; width: 250px; cursor: pointer;"
+             onclick="window.open('https://github.com/Mrunal31-Stark/Conversational_Image_bot')">
+            <img src="{% static 'chatbot.jpeg' %}" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="padding: 10px; color: #ffd700;">
+                <strong>Conversational Image Chatbot</strong>
+                <p style="color: #ccc;">Image captioning + NLP bot using Transformers.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #1a1a1a; border-radius: 12px; overflow: hidden; width: 250px; cursor: pointer;"
+             onclick="window.open('https://github.com/Mrunal31-Stark/Face-_Attendence-system')">
+            <img src="{% static 'face_attendance.jpeg' %}" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="padding: 10px; color: #ffd700;">
+                <strong>Face Attendance System</strong>
+                <p style="color: #ccc;">Automated logging with face recognition.</p>
+            </div>
+        </div>
+
+        <div style="background-color: #1a1a1a; border-radius: 12px; overflow: hidden; width: 250px; cursor: pointer;"
+             onclick="window.open('https://github.com/Mrunal31-Stark/Sentimtent-Analysis-Using-LSTM')">
+            <img src="{% static 'Sentiment_Analysis.png' %}" style="width: 100%; height: 150px; object-fit: cover;">
+            <div style="padding: 10px; color: #ffd700;">
+                <strong>Sentiment Analysis </strong>
+                <p style="color: #ccc;">analyze the sentiment of the text Positive , Negative and Neutral.</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+</section>
 
     <section>
-        <h2>Contact Me</h2>
-        <form action="/submit_contact/" method="POST">
-            {% csrf_token %}
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="phone" placeholder="Phone Number" required>
-            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
+    <h2>Contact Me</h2>
+    <form action="/submit_contact/" method="POST" style="
+        background-color: rgba(255, 255, 255, 0.02);
+        padding: 30px;
+        border-radius: 16px;
+        backdrop-filter: blur(10px);
+        border: 1px solid #333;
+        max-width: 600px;
+        margin-top: 20px;">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="text" name="phone" placeholder="Phone Number" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
 </body>
 </html>
